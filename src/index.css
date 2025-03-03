@@ -102,48 +102,111 @@
   }
 
   .movie-card {
-    @apply bg-dark-100 p-5 rounded-2xl shadow-inner shadow-light-100/10;
+    background-color: #0f0d23;
+    border-radius: 1rem;
+    box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.1);
+    padding: 16px;
+  }
 
-    & img {
-      @apply rounded-lg h-auto w-full;
-    }
+  .movie-card img {
+    border-radius: 0.5rem;
+    height: auto;
+    width: 100%;
+  }
 
-    & h3 {
-      @apply text-white font-bold text-base line-clamp-1;
-    }
+  .movie-card h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mt-4 {
+    margin-top: 4px;
+  }
 
-    & .content {
-      @apply mt-2 flex flex-row items-center flex-wrap gap-2;
-    }
+  .movie-card .content {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-    & .rating {
-      @apply flex flex-row items-center gap-1;
-    }
+  .movie-card .rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+  }
 
-    & .rating img {
-      @apply size-4 object-contain;
-    }
+  .movie-card .rating img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+  }
 
-    & .rating p {
-      @apply font-bold text-base text-white;
-    }
+  .movie-card .rating p {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+  }
 
-    & .content span {
-      @apply text-sm text-gray-100;
-    }
+  .movie-card .content span {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+  }
 
-    & .content .lang {
-      @apply capitalize text-gray-100 font-medium text-base;
-    }
+  .movie-card .content .lang {
+    text-transform: uppercase;
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 1rem;
+  }
 
-    & .content .year {
-      @apply text-gray-100 font-medium text-base;
-    }
+  .movie-card .content .year {
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 1rem;
   }
 }
 
-@utility text-gradient {
-  @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
+.text-gradient {
+  background: linear-gradient(90deg, #e6dffa, #ab8bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.error-message {
+  color: #f00;
+}
+
+.custom-spinner {
+  width: 2rem;
+  height: 2rem;
+  color: #e5e7eb;
+  animation: spin 1s linear infinite;
+  fill: #4f46e5;
+}
+
+.dark .custom-spinner {
+  color: #4b5563;
+}
+
+.text-white {
+  color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @utility fancy-text {
